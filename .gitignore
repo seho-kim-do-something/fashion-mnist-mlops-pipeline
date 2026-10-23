@@ -1,0 +1,31 @@
+# Local environments and credentials
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+
+# Python and test output
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Downloaded data and generated artifacts
+data/
+artifacts/
+mlruns/
+mlartifacts/
+*.db
+*.pt
+*.keras
+*.onnx
+
+# Local editor and operating system files
+.DS_Store
+.idea/
+.vscode/

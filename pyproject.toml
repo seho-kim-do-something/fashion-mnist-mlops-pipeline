@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fashion-mnist-mlops-pipeline"
+version = "0.1.0"
+description = "A Fashion-MNIST classifier with experiment tracking, model storage, and prediction services."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "tensorflow>=2.16,<3",
+    "keras>=3,<4",
+    "numpy>=1.26",
+    # Lightweight MLflow client; the full package adds pyarrow, which crashes with TensorFlow on macOS.
+    "mlflow-skinny>=2.17,<3",
+    "python-dotenv>=1.0",
+    "minio>=7.2",
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+    "python-multipart>=0.0.18",
+    "pillow>=11.0",
+    "streamlit>=1.40",
+    "httpx>=0.27",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+fashion-mnist-train = "fashion_mnist_mlops.train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

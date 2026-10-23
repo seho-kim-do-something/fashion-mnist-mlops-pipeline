@@ -1,0 +1,14 @@
+[training]
+epochs = 10
+batch_size = 64
+learning_rate = 0.001
+optimizer = "adam"
+loss_function = "cross_entropy"
+random_seed = 42
+validation_split = 0.2
+
+[data]
+directory = "data"
+
+[output]
+directory = "artifacts"
